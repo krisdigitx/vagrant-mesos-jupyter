@@ -22,7 +22,7 @@ vagrant up mesos-slave3
 
 ```
 {
-  "id": "nerve-jspark-dev",
+  "id": "jspark-dev",
   "instances": 1,
   "mem": 512,
   "ports": [8888],
