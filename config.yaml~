@@ -1,0 +1,85 @@
+---
+vagrantfile-local:
+    mesos-master:
+        box: 'bento/centos-7.1'
+        hostname: 'mesos-master'
+        memory: '1024'
+        cpus: '1'
+        chosen_provider: virtualbox
+        vagrant: true
+        impact_level: '2'
+        node_role: 'mesos-master'
+        configuration_group: 'undef'
+        environment: 'undef'
+        provision_script: 'setup-mesosmaster.sh'
+        network:
+            private_network: 10.141.141.10
+            forwarded_port:
+                ssh_forward:
+                    host: '6059'
+                    guest: '22'
+        post_up_message: 'Hello There!'
+        provider:
+            virtualbox:
+                modifyvm:
+                    natdnshostresolver1: on
+            vmware:
+                numvcpus: 1
+            parallels:
+                cpus: 1
+
+    mesos-slave1:
+        box: 'bento/centos-7.1'
+        hostname: 'mesos-slave1'
+        memory: '1024'
+        cpus: '1'
+        chosen_provider: virtualbox
+        vagrant: true
+        impact_level: '2'
+        node_role: 'mesos-slave'
+        configuration_group: 'undef'
+        environment: 'undef'
+        provision_script: 'setup-mesoslave.sh'
+        network:
+            private_network: 10.141.141.11
+            forwarded_port:
+                ssh_forward:
+                    host: '6060'
+                    guest: '22'
+        post_up_message: 'Hello There!'
+        provider:
+            virtualbox:
+                modifyvm:
+                    natdnshostresolver1: on
+            vmware:
+                numvcpus: 1
+            parallels:
+                cpus: 1
+
+    mesos-slave2:
+        box: 'bento/centos-7.1'
+        hostname: 'mesos-slave2'
+        memory: '1024'
+        cpus: '1'
+        chosen_provider: virtualbox
+        vagrant: true
+        impact_level: '2'
+        node_role: 'mesos-slave'
+        configuration_group: 'undef'
+        environment: 'undef'
+        provision_script: 'setup-mesoslave.sh'
+        network:
+            private_network: 10.141.141.12
+            forwarded_port:
+                ssh_forward:
+                    host: '6061'
+                    guest: '22'
+        post_up_message: 'Hello There!'
+        provider:
+            virtualbox:
+                modifyvm:
+                    natdnshostresolver1: on
+            vmware:
+                numvcpus: 1
+            parallels:
+                cpus: 1
