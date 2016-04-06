@@ -42,13 +42,13 @@ vagrant up mesos-slave3
 }
 ```
 
-save it as ``vagrant-nerve-jspark-dev-1.json``
+save it as ``vagrant-jspark-dev-1.json``
 
 ###### 4.
 
 > launch the Jupyter notebook in marathon
 
-``` curl -X POST http://10.141.141.10:8080/v2/apps -d @vagrant-nerve-jspark-dev-1.json -H "Content-type: application/json" ```
+``` curl -X POST http://10.141.141.10:8080/v2/apps -d @vagrant-jspark-dev-1.json -H "Content-type: application/json" ```
 
 
 > more work need to put this behind HAProxy... :)
